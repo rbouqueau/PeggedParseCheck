@@ -18,14 +18,14 @@ bool checkBoundaries(const ref ParseTree p, size_t begin, size_t end)
 	if(p.begin != begin)
 	{
 		writeln("[Pegged] element not parsed:");
-		writeln(p.input[begin .. p.begin]);
+		writeln(p.input[p.begin .. begin]);
 		return false;
 	}
 
 	if(p.end != end)
 	{
 		writeln("[Pegged] element not parsed:");
-		writeln(p.input[end .. p.end]);
+		writeln(p.input[p.end .. end]);
 		return false;
 	}
 
