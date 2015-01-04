@@ -45,6 +45,9 @@ bool checkChildren(const ref ParseTree p)
 
 	foreach(ref child; p.children)
 	{
+		if(!child.successful)
+			return false;
+
 		if(!checkChildren(child))
 			return false;
 	}
